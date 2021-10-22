@@ -1,62 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>[NLW Heat] - Origin</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <main>
-      <div class="container">
-        <div class="avatar">
-          <span>
-            <img src="images/selo.svg" alt="Selo Rocketseat" />
-          </span>
-          <img src="images/perfil-bg.png" alt="Foto Beatriz Givisiez" />
-        </div>
-        <h1>Beatriz Givisiez</h1>
-        <a href="https://github.com/BeatrizGivisiez">
-          <img src="images/github.svg" alt="Ícone GitHub" />
-          BeatrizGivisiez</a
-        >
-        <p>An instructor focused on helping pople start programming for web</p>
 
-        <ul>
-          <li>
-            <a href="https://www.linkedin.com/in/beatriz-givisiez/" target="_blank">
-              <img src="images/linkedin.png" alt="LinkedIn" />
-            </a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/beatriz-givisiez/" target="_blank">
-              <img src="images/youtube.svg" alt="Youtube" />
-            </a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/beatriz-givisiez/" target="_blank">
-              <img src="images/instagram.svg" alt="instagram" />
-            </a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/beatriz-givisiez/" target="_blank">
-              <img src="images/facebook.svg" alt="Facebook" />
-            </a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/beatriz-givisiez/" target="_blank">
-              <img src="images/twitter.svg" alt="Twitter" />
-            </a>
-          </li>
-        </ul>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>[NLW Heat] - Origin</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <main>
+    <div class="container">
+      <div class="avatar">
+        <span>
+          <img src="images/selo.svg" alt="Selo Rocketseat" />
+        </span>
+        <img src="images/perfil-bg.png" alt="Foto Beatriz Givisiez" />
       </div>
-    </main>
-  </body>
+      <h1 id="userName">Beatriz Givisiez</h1>
+      <a href="https://github.com/BeatrizGivisiez">
+        <img src="images/github.svg" alt="Ícone GitHub" />
+        BeatrizGivisiez</a>
+      <p>An instructor focused on helping pople start programming for web</p>
+      <ul id="socialLinks">
+        <li class="linkedin">
+          <a href="https://www.linkedin.com/in/beatriz-givisiez/" target="_blank">
+            <img src="images/linkedin.png" alt="LinkedIn" />
+          </a>
+        </li>
+        <li class="youtube">
+          <a href="https://www.youtube.com/in/maykbrito/" target="_blank">
+            <img src="images/youtube.svg" alt="Youtube" />
+          </a>
+        </li>
+        <li class="instagram">
+          <a href="https://www.instagram.com/in/maykbrito/" target="_blank">
+            <img src="images/instagram.svg" alt="instagram" />
+          </a>
+        </li>
+        <li class="facebook">
+          <a href="https://www.facebook.com/in/maykbrito/" target="_blank">
+            <img src="images/facebook.svg" alt="Facebook" />
+          </a>
+        </li>
+        <li class="twitter">
+          <a href="https://www.twitter.com/in/maykbrito/" target="_blank">
+            <img src="images/twitter.svg" alt="Twitter" />
+          </a>
+        </li>
+      </ul>
+    </div>
+  </main>
+
+  <script>
+    const linksSocialMedia = {
+      githubt: "BeatrizGivisiez",
+      youtube: "UC1La2T-FoCAA5VqAp5v3jZg",
+      instagram: "biagivisiez",
+      facebook: "bia.givisiez",
+      twitter: "BeatrizGivisiez",
+    };
+
+    function changeSocialMediaLinks() {
+      // document.getElementById('userName').textContent = "Beatriz Irineu Givisiez" ou userName.textContent = "Beatriz Irineu Givisiez";
+      //for (let i = 0; i <= 10; i++){}
+      for (let li of socialLinks.children){
+        const social = li.getAttribute('class') //pega o nome do attributo recebido em cada classe
+        //`` template string
+        li.children[0].href = `https://${social}.com/${linksSocialMedia[social]}`
+      }      
+    }    
+
+    changeSocialMediaLinks();
+
+  </script> 
+</body>
+
 </html>
